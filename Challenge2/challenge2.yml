@@ -1,0 +1,20 @@
+---
+- name: Install package
+  hosts: planet_express
+
+
+  vars_prompt:
+          - name: "package"
+            prompt: "What package you want to install?"
+
+  tasks:
+          - name: "Install a {{package}} package"
+            apt:
+                    name: "{{package}}"
+                    state: present
+                    #            debug:
+                    #msg: "{{package}}"
+            become: true
+
+
+
