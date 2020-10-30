@@ -1,0 +1,10 @@
+---
+- hosts: planet_express
+  tasks:
+    - copy:
+        src: "{{ item }}"
+        dest: "{{ item }}"
+      loop:
+        - "simpsons-ans.txt"
+        - "simpsons-py.txt"
+
